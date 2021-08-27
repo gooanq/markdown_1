@@ -1,0 +1,677 @@
+$primary: #0078aa;
+$dark: #363636;
+$light: #fff;
+$grayish: #a599af;
+
+$lg: 1280px;
+$md: 768px;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	background-color: $light;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+}
+
+input {
+	outline: none;
+	border: none;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+	text-decoration: none;
+}
+
+button {
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+.wrapper {
+	max-width: 140rem;
+	padding: 0 7.5rem 0 7.5rem;
+	margin: 0 auto;
+
+	@media screen and (max-width: $lg) {
+		padding: 0 1.5rem 0 1.5rem;
+	}
+
+	@media screen and (max-width: $md) {
+		padding: 0;
+	}
+}
+
+.navigation {
+	padding: 1.5rem 0 1.5rem 0;
+	background: $light;
+	position: sticky;
+	z-index: 10;
+	top: 0;
+
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&-menu {
+		column-gap: 2rem;
+
+		&__link {
+			color: $dark;
+			transition: 0.3s;
+			font-weight: bold;
+			font-size: 1rem;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+
+	@media screen and (max-width: $lg) {
+	}
+
+	@media screen and (max-width: $md) {
+		.wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			row-gap: 1.5rem;
+		}
+	}
+}
+
+.header {
+	height: 560px;
+	background: transparent url("../img/header_bg.jpg") 50% / cover no-repeat;
+
+	.wrapper {
+		height: inherit;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+	}
+
+	&-content {
+		width: 50rem;
+		display: flex;
+		flex-direction: column;
+		row-gap: 2.5rem;
+		align-items: flex-start;
+		justify-content: flex-start;
+
+		&__title {
+			font-size: 3rem;
+			color: $dark;
+		}
+
+		&__text {
+			font-size: 1.5rem;
+			color: $grayish;
+		}
+
+		&-icons {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			column-gap: 2.5rem;
+
+			&__link {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 5rem;
+				height: 5rem;
+				background-color: $primary;
+				border: 0.2rem solid transparent;
+				border-radius: 50%;
+				transition: 0.3s;
+
+				svg {
+					width: 3rem;
+					height: 3rem;
+					path {
+						fill: $light !important;
+					}
+				}
+
+				&:hover {
+					background-color: $light;
+					border-color: $primary;
+
+					svg {
+						width: 3rem;
+						height: 3rem;
+						path {
+							fill: $primary !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $lg) {
+		background: transparent url("../img/header_bg.jpg") 30% / cover no-repeat;
+	}
+
+	@media screen and (max-width: $md) {
+		height: 420px;
+		background: transparent url("../img/header_bg.jpg") 60% / cover no-repeat;
+
+		.wrapper {
+			align-items: center;
+			justify-content: flex-end;
+			padding-bottom: 1rem;
+		}
+
+		&-content {
+			width: 100%;
+			align-items: center;
+
+			&__title {
+				text-align: center;
+			}
+
+			&__text {
+				text-align: center;
+			}
+			&-icons {
+				justify-content: center;
+				column-gap: 5rem;
+			}
+		}
+	}
+
+}
+
+.about {
+	position: relative;
+	height: 628px;
+	display: flex;
+	align-items: center;
+
+	&__arrow-up {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		z-index: 5;
+		width: 5.5rem;
+		height: 5.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background-color: $primary;
+		transform: rotate(-90deg);
+		user-select: none;
+		cursor: pointer;
+
+		span {
+			font-size: 2rem;
+			color: $light;
+		}
+	}
+
+	&__image {
+		flex-shrink: 1;
+		object-fit: cover;
+	}
+
+	.wrapper {
+		flex-shrink: 1;
+	}
+
+	&__title {
+		font-size: 2.5rem;
+		font-weight: bold;
+		margin-bottom: 1.8rem;
+	}
+
+	&__subtitle {
+		color: $primary;
+		font-size: 1.5rem;
+		margin-bottom: 2.8rem;
+	}
+
+	&-item {
+		width: 35rem;
+		margin-bottom: 2rem;
+
+		&__title {
+			display: flex;
+			column-gap: 1rem;
+			align-items: center;
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+
+		&__text {
+			font-size: 1.5rem;
+			color: $grayish;
+		}
+	}
+
+	@media screen and (max-width: $lg) {
+		width: 100%;
+		height: 530px;
+		&__image {
+			width: 50%;
+			object-fit: cover;
+		}
+
+		&__arrow-up {
+			top: auto;
+			bottom: auto;
+		}
+	}
+
+	@media screen and (max-width: $md) {
+		padding: 1.5rem 0 0 0;
+		width: 100%;
+		height: auto;
+		flex-direction: column;
+		row-gap: 1rem;
+
+		&-item {
+			width: 100%;
+
+			&__title,
+			&__text {
+				display: flex;
+				justify-content: center;
+				text-align: center;
+			}
+		}
+
+		.wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&__image {
+			width: 100%;
+		}
+
+		&__arrow-up {
+			top: 15rem;
+			right: 2rem;
+		}
+	}
+}
+
+.help {
+	padding: 7rem 0 6rem 0;
+	background: $primary url("../img/services_bg.jpg") 50% / cover no-repeat;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__title {
+		font-size: 2.6rem;
+		font-weight: bold;
+		color: $dark;
+		margin-bottom: 1.5rem;
+	}
+
+	&__subtitle {
+		font-size: 1rem;
+		margin-bottom: 3rem;
+	}
+
+	&-items {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 3rem;
+		column-gap: 3rem;
+		align-items: center;
+		justify-content: center;
+
+		&-item {
+			width: 30%;
+			display: flex;
+			flex-direction: column;
+			row-gap: 1.5rem;
+			background-color: $light;
+			padding: 2.5rem 3rem;
+			color: $dark;
+			font-size: 1.5rem;
+
+			&__image {
+				width: 8.5rem;
+				height: 8.5rem;
+				object-fit: contain;
+			}
+			&__title {
+				font-weight: bold;
+			}
+		}
+
+		@media screen and (max-width: $md) {
+			flex-wrap: nowrap;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+
+			&-item {
+				width: 90%;
+			}
+		}
+	}
+}
+
+.pricing {
+	padding: 8rem 0;
+	background: transparent url("../img/pricing_bg.jpg") 50% / cover no-repeat;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__title {
+		font-size: 2.6rem;
+		font-weight: bold;
+		color: $dark;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	&__subtitle {
+		font-size: 1rem;
+		margin-bottom: 3rem;
+		text-align: center;
+	}
+
+	&-items {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&-item {
+			display: flex;
+			width: 31%;
+			flex-shrink: 1;
+			flex-direction: column;
+			row-gap: 2.5rem;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.5rem;
+
+			&__name {
+				font-weight: bold;
+				font-size: 2rem;
+				text-align: center;
+			}
+
+			&__price {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 3rem;
+				font-weight: bold;
+				span {
+					font-weight: bold;
+					font-size: 3.2rem;
+					margin-right: 0.5rem;
+				}
+			}
+
+			&__info {
+				text-align: center;
+			}
+
+			&__amount {
+				font-style: italic;
+				text-align: center;
+			}
+		}
+
+		&-item:nth-of-type(1),
+		&-item:nth-of-type(3) {
+			.pricing-items-item__button {
+				padding: 1.7rem;
+				border-radius: 2rem;
+				font-weight: bold;
+				transition: 0.3s;
+				border: 0.2rem solid $primary;
+				background-color: $light;
+				color: $primary;
+
+				&:hover {
+					background-color: $primary;
+					color: $light;
+					border-color: $light;
+				}
+			}
+
+			padding: 6rem 10rem 6rem 10rem;
+			background-color: $primary;
+			color: $light;
+
+			.cross {
+				path {
+					fill: $light !important;
+				}
+			}
+		}
+
+		&-item:nth-of-type(2) {
+			.pricing-items-item__button {
+				padding: 1.7rem;
+				border-radius: 2rem;
+				font-weight: bold;
+				transition: 0.3s;
+				border: 0.2rem solid $primary;
+				color: $primary;
+
+				&:hover {
+					background-color: $primary;
+					color: $light;
+				}
+			}
+
+			padding: 8rem 10rem 8rem 10rem;
+			background-color: $light;
+			color: $primary;
+			border: 1px solid $primary;
+
+			.cross {
+				path {
+					fill: $primary !important;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $lg) {
+	}
+
+	@media screen and (max-width: $md) {
+		&-items {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			row-gap: 1.5rem;
+
+			&-item {
+				width: 95%;
+				padding: 6rem 10rem 6rem 10rem;
+			}
+		}
+	}
+}
+
+.contact {
+	width: 100%;
+	height: 52rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	column-gap: 2rem;
+
+	&__image {
+		max-width: 75rem;
+		width: 50%;
+		height: inherit;
+		object-fit: cover;
+	}
+
+	&-content {
+		width: 49%;
+		padding-right: 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	&__title {
+		align-self: flex-start;
+		color: $dark;
+		font-size: 2.5rem;
+		font-weight: bold;
+		margin-bottom: 1.3rem;
+
+		@media screen and (max-width: $lg) {
+			width: 23rem;
+		}
+	}
+
+	&__subtitle {
+		color: $dark;
+		font-size: 1.5rem;
+		font-weight: normal;
+		margin-bottom: 3.5rem;
+	}
+
+	&-form {
+		display: flex;
+		flex-direction: column;
+		row-gap: 2rem;
+
+		&__submit {
+			align-self: flex-start;
+			padding: 1rem 2.5rem;
+			border-radius: 0.7rem;
+			font-weight: bold;
+			transition: 0.3s;
+			color: $light;
+			background-color: $primary;
+			border: 0.2rem solid transparent;
+
+			&:hover {
+				color: $primary;
+				background-color: $light;
+				border-color: $primary;
+			}
+		}
+
+		&__input {
+			font-size: 1.5rem;
+			padding: 1rem;
+			outline: none;
+			border: none;
+			border-bottom: 1px solid $grayish;
+
+			&::placeholder {
+				font-style: italic;
+				font-size: 1.3rem;
+				font-weight: bold;
+			}
+		}
+	}
+
+	@media screen and (max-width: $md) {
+		height: auto;
+		padding: 0 0 2rem 0;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		row-gap: 2rem;
+
+		&__image {
+			max-width: 98%;
+			width: 98%;
+			height: 43rem;
+			object-fit: cover;
+		}
+
+		&-content {
+			width: 98%;
+		}
+
+		&__title {
+			align-self: center;
+		}
+		&__title,
+		&__subtitle {
+			text-align: center;
+		}
+
+		&-form {
+			&__submit {
+				align-self: center;
+			}
+		}
+	}
+}
+
+.footer {
+	padding: 1.5rem 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $dark;
+
+	&__copyright {
+		color: $light;
+		font-size: 2rem;
+	}
+}
+
+.cross {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.arrow-right {
+	width: 12px;
+	height: 10px;
+
+	path {
+		fill: $primary;
+	}
+}
